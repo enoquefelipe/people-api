@@ -1,0 +1,1 @@
+insert into person (id, name, document) values ('414dd5a1-e190-444c-ab90-e34f8ddd7a51', 'John Doe', '808.076.851-00')

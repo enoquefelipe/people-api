@@ -1,31 +1,26 @@
 package com.people.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 
 @Entity
+@Table(name = "person")
 public class Person {
 
     @Id
-    private Double id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+    private String id;
     private String name;
     private String document;
-
-    public Person(String name, String document) {
-        this.name = name;
-        this.document = document;
-    }
 
     /*
     Getters and Setters
     */
 
-    public Double getId() {
+    public String getId() {
         return id;
-    }
-
-    public void setId(Double id) {
-        this.id = id;
     }
 
     public String getName() {
