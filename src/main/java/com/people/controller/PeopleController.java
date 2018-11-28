@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.people.model.Person;
-import com.people.model.Status;
 import com.people.service.PeopleService;
 
 @RestController
