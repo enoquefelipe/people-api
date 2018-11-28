@@ -20,7 +20,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.people.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.people.endpoint"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
@@ -29,8 +29,8 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 "People REST API",
-                "API for people management.",
-                "0.0.1",
+                "This API was built for people management, creation, research, update and deletion.",
+                "0.0.1-SNAPSHOT",
                 "Terms of service",
                 new Contact("Enoque Leal", "https://enoquefelipe.github.io", "enoquefelipe@gmail.com"),
                 "License of API", "API license URL", Collections.emptyList());
