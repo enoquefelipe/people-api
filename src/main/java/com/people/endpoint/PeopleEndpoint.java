@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -23,11 +25,13 @@ import com.people.service.PeopleService;
 
 @RestController
 @RequestMapping("/api")
+@Api(value = "", description = "")
 public class PeopleEndpoint {
 
 	@Autowired
 	private PeopleService service;
 
+	@ApiOperation(value = "Find all people")
 	@GetMapping("/people")
 	public @ResponseBody List<Person> getAllPerson() {
 		return (List<Person>) service.findAll();
